@@ -442,7 +442,12 @@ html, body, #root {
 }
 
 /* Main screens: add subtle padding and smoother corners */
-.screen { padding: 22px; }
+.screen {
+  padding: 22px;
+  /* allow vertical scrolling inside each screen when content is taller than the viewport */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
 /* Notification card polish */
 .notification-card {
@@ -479,6 +484,9 @@ html, body, #root {
 .ios-btn { border-radius: 12px; padding: 14px 16px; font-size: 15px; }
 .ios-btn.primary { background: linear-gradient(90deg, var(--accent), #ff3b58); box-shadow: 0 8px 20px rgba(255,90,120,0.12); }
 .ios-btn.big-yes { padding: 16px; font-weight: 700; border-radius: 14px; }
+
+/* Ensure primary action group stays near the bottom of the screen and is reachable */
+.bottom-action { margin-top: auto; padding-top: 12px; }
 
 /* Video container rounded and elevated */
 .video-container { border-radius: 16px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
